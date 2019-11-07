@@ -21,7 +21,7 @@ public class Location {
 	@Column(name = "id")
 	private long id;
 	
-	@Column(name = "destination")
+	@Column()
 	private String destination; 
 	@Column(name = "TRAVEL_MODE")
 	private String travelMode; //car or plane
