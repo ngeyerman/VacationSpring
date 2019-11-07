@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add a new destination!</title>
+</head>
+<body>
+ 	<form name='f' th:object="${newLocation}" th:action="@{/inputLocation}" method='POST'>
+ 	
+ 	Location: <input name="destination" size="20"><br/>
+ 	Mode of Travel: <input name="travelMode" size = "10"><br/>
+ 	Travel Time in hours: <input name="travelTime" size = "10"><br/>
+ 	Kid Friendly: <input name="kidFriendly" size = "10"><br/>
+ 	What to eat: <input name="attractions.toEat" size = "20"><br/>
+ 	What to drink: <input name="attractions.toDrink" size = "20"><br/>
+ 	What to do: <input name="attractions.toDo" size = "20"><br/>
+ 
+ 	<input name="submit" type="submit" value="submit"/>
+ 
+ </form>
+ <a href="/viewAll">View all Locations</a>
+</body>
+</html>

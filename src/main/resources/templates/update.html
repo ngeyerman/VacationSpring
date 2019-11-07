@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit the location</title>
+</head>
+<body>
+<form action="#" th:action="@{/update/{id}(id=${location.id})}"
+th:object="${location}" method="post">
+	
+	<label for="destination">Destination></label>
+	<input type="text" th:field="*{destination}" id="destination" placeholder="Destination">
+	<span th:if="${#fields.hasErrors('destination')}"
+	th:errors="*{destination}"></span>
+	
+	<label for="travelMode">Mode of Travel</label>
+	<input type="text" th:field="*{travelMode}" id="travelMode" placeholder="Mode Of Travel">
+	<span th:if="${#fields.hasErrors('travelMode')}"
+	th:errors="*{travelMode}"></span>
+	
+	<label for="travelTime">Travel time in Hours</label>
+	<input type="text" th:field="*{travelTime}" id="travelTime" placeholder="Travel Time">
+	<span th:if="${#fields.hasErrors('travelTime')}"
+	th:errors="*{travelTime}"></span>
+	
+	<label for="kidFriendly">Kid Friendly</label>
+	<input type="text" th:field="*{kidFriendly}" id="kidFriendly" placeholder="Kid Friendly">
+	<span th:if="${#fields.hasErrors('kidFriendly')}"
+	th:errors="*{kidFriendly}"></span>
+	
+	<label for="attractions.toEat">What to Eat</label>
+	<input type="text" th:field="*{attractions.toEat}" id="attractions.toEat" placeholder="What to Eat">
+	<span th:if="${#fields.hasErrors('attractions.toEat')}"
+	th:errors="*{attractions.toEat}"></span><br/>
+	
+	<label for="attractions.toDrink">What to Drink</label>
+	<input type="text" th:field="*{attractions.toDrink}" id="attractions.toDrink" placeholder="What to Drink">
+	<span th:if="${#fields.hasErrors('attractions.toDrink')}"
+	th:errors="*{attractions.toDrink}"></span>
+	
+	<label for="attractions.toDo">What to Do</label>
+	<input type="text" th:field="*{attractions.toDo}" id="attractions.toDo" placeholder="What to Do">
+	<span th:if="${#fields.hasErrors('attractions.toDo')}"
+	th:errors="*{attractions.toDo}"></span>
+	
+		
+	<input type="submit" value="Update Location">
+	</form>
+	<a href="../viewAll">Back to view all locations</a>
+</body>
+</html>

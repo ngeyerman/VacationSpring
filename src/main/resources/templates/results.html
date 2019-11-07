@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Vacation Locations</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentLocation : ${locations}">
+	<th> Destination:</th>
+	
+	<td th:text="${currentLocation.destination}" />
+	<th> Mode of Travel:</th>
+	<td th:text="${currentLocation.travelMode}" />	
+	<th> Travel time in hours:</th>
+	<td th:text="${currentLocation.travelTime}" />	
+	<th> Is it kid friendly?</th>
+	<td th:text="${currentLocation.kidFriendly}" />	
+	<th> What to eat?</th>
+	<td th:text="${currentLocation.attractions.toEat}" />	
+	<th>What to drink?</th>
+	<td th:text="${currentLocation.attractions.toDrink}" />	
+	<th>What to do?</th>
+	<td th:text="${currentLocation.attractions.toDo}" />
+	
+	<td><a th:href="@{/edit/{id}(id=${currentLocation.id})}">Edit Location</a></td>
+	<td><a th:href="@{/delete/{id}(id=${currentLocation.id})}">Delete this Location</a></td>
+	
+</tr>	
+</table>
+</form>
+<a href="../inputLocation">Add a new Location</a>
+</body>
+</html>
